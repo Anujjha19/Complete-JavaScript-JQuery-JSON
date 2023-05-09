@@ -1,0 +1,14 @@
+let obj={
+    name:'shir',
+    quantity:5,
+    price:0,
+    
+    getTotal: function(unitPrice){
+        let price=0;
+        price= price + unitPrice;
+        return price;
+    }
+}
+
+console.log("Total Peice of Product is " + obj.price);
+console.log(obj.getTotal(100));

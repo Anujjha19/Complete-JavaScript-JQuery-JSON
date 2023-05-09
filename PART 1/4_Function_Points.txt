@@ -1,0 +1,313 @@
+*  Function Declaration - Below all are function declaration
+        function writeFun() {
+            console.log("Hi Function")
+        }
+        writeFun();
+
+*  Storing Function in other variable 
+
+        function twosum4(a, b) {
+            return (2 + 4);
+        }
+        console.log(twosum4())
+        const ans = twosum4()
+        console.log(ans)
+
+{  console.log( undefined + undefined ) // NAN  }
+
+*  ParaMeterized Function
+
+        function sum(a, b) { //Parameter Passed
+            console.log(a + b);
+        }
+        sum(2, 4); //argument passed 
+
+*  ODD EVEN Function
+        function checkODDEVEN(num) {
+            
+            /* if (num % 2 == 0) {
+                return "EVEN";
+            }
+            return "ODD"; */
+
+            return num % 2 === 0;
+        }
+        console.log(checkODDEVEN(10))
+
+
+*  Function Taking String
+        function firstChar(anyString) {
+            return anyString[0];
+        }
+        console.log(firstChar("anuj"))
+
+
+*  Function Taking Array
+
+        function takeArray(myarr, target ) {
+            for (let i = 0; i < myarr.length; i++) {
+                if (myarr[i] === target ) {
+                    console.log(`Present at ${i}`)
+                    return true;
+                }
+            }
+            console.log("Not Present")
+            return false;
+        }
+        console.log(takeArray(([10, 5, 4, 2]), 2));
+
+
+*  Function Expression
+
+    When  we asign a function in the variable , we  called it as function Expression
+
+        const writeFun = function () {
+            console.log("Hi Function")
+        }
+        writeFun();
+
+        const sum =  function (a, b) { //Parameter Passed
+        console.log(a + b);
+        }
+        sum(2, 4); 
+
+
+*  ARROW Function 
+
+        const writeFun = () => {
+            console.log("Hi Function")
+        }
+        writeFun();
+
+        const sum = (a, b) => { 
+            console.log(a + b);
+        }
+        sum(2, 4); 
+
+    ** If there is Only  1 Paramenter 
+        const num = a =>   a;
+        console.log(num(6))
+
+** Different Ways To Implement Function
+
+        * Declaration
+            function name(){
+                console.log("anuj")
+            }
+            name();
+        * Expression
+            const name1 = function (){
+                console.log("anuj")
+            }
+            name1();
+        * Arrow Function
+            const name2 = () => console.log("anuj");
+            name2();
+
+*  Function Inside Function
+
+
+            /* 
+            const age = () =>{
+                const ageInside =() => {
+                    console.log("ageInside 21");
+                }
+                const totalAge =() => {
+                    console.log("Total Age 20 + 21 = 41 ");
+                }
+                console.log("age 20")
+            }
+            age(); //age 20 */
+
+        --Check It--
+            const age = () =>{
+                const ageInside =() => {
+                    console.log("ageInside 21");
+                }
+                const totalAge =() => {
+                    console.log("Total Age 20 + 21 = 41 ");
+                }
+                ageInside();
+                totalAge();
+                console.log("age 20")
+            }
+            age();
+            /* 
+            ageInside 21
+            Total Age 20 + 21 = 41 
+            age 20
+            */
+
+*  Lexical Scope 
+
+        JavaScript uses lexical scoping to resolve the variable names when a function is created inside another function
+
+        Lexical Scope allows inner functions to access the scope of their outer functions
+
+        if the variable inside function is not present , then will see the variable Globally  and get he value 
+
+            function myApp() {
+            const myVar = "Value 1 "
+            function myFunc() {
+
+                //const myVar= "inside myfunc == Value 2 ";
+                console.log("inside MyFunc ", myVar)
+            }
+            const myFunc2 = function () { }
+            const myFunc3 = () => { }
+
+            console.log(myVar)
+            myFunc()
+            }
+            myApp()
+
+
+*  Block Scope VS Function Scope
+
+        {
+            Function scoped variables: A function scoped variable means that the variable defined within a function will not accessible from outside the function.
+            But You can access varibale from Outside
+
+            Block scoped variables: A block scoped variable means that the variable defined within a block will not be accessible from outside the block
+        }
+
+*  LET , CONST & VAR  access 
+        {
+            *  Let and Const can be  access within the block , They are BLOCK
+            Scope 
+            *  Whereas Var is a Function Scope & can be access / used from
+            anywhere
+
+        }
+
+        *  Example        
+
+        {
+            let x = "anuj";
+        }
+        console.log(x) //ERROR can't Know what is x
+        {
+            var y = "anuj";
+        }
+        console.log(y)
+
+
+*  Hoisting { used Only With var }
+
+        hello();
+        function hello (){
+            console.log("Hellow Hoisting ")
+        }
+
+
+    { 
+        a variable/function can be used before it has been declared. i.e a variable/function can be used before it has been declared. 
+
+        Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+        let variable before it is declared will result in a ReferenceError.
+
+        const variable before it is declared, is a syntax error, so the code will simply not run.
+    }
+
+    Also Will throw error with Function Expression , Arrow Function 
+        hello();
+        const hello  = function  (){
+        console.log("Hellow Hoisting ")
+        } //ERROR
+
+*  "use strict"
+         Defines that JavaScript code should be executed in "strict mode".
+         Declaring to the beginning of a script or a function.
+         easier to write "secure" JavaScript.
+
+*  Default Parameters
+
+        function sum(a, b=0) {
+            return a + b;
+        }
+        console.log(sum(1, 3)); //4
+        console.log(sum(3));   //3
+
+
+*  REST Parameters
+        function myfuncRest(a, b, ...c) {
+            console.log(` a is ${a} `)
+            console.log(` b is ${b} `)
+            console.log(` c is ${c} `)
+        }
+        myfuncRest( 3,4,5 ,6,7 ,8)
+        /*  
+        a is 3
+        b is 4
+        c is 5,6,7,8
+        */
+
+        function AddAll(...numbers) {
+            let total = 0;
+                for(let number of numbers) {
+                    total += number;
+            }
+            return total
+        }
+        const ans = AddAll(1, 2, 3, 4, 5);
+        console.log(ans);        
+
+*  Parameter Destructuring
+
+        function printPerson({name , gender}){
+            console.log(name);
+            console.log(gender);
+        }
+        printPerson(person);
+
+*  CallBack Function 
+
+        function callackFunc() {
+            console.log("Hi calling Function inside function")
+        }
+        function myCBfunc(callBack) {
+            // console.log(callBack);
+            callBack();
+            console.log(" My CB Func ");
+        }
+        // myCBfunc({here we can pass anything value , array , Object})
+
+        myCBfunc(callackFunc)
+
+**  What is the callback hell in Javascript?
+        The phenomenon which happens when we nest multiple callbacks within a function is called a callback hell. The shape of the resulting code structure resembles a pyramid and hence callback hell is also called the “pyramid of the doom”. It makes the code very difficult to understand and maintain.
+
+
+* Function returning Function
+
+        function func1() {
+            function hello() {
+                return ("hello world");
+            }
+            return hello;
+        }
+        const ans1 = func1();
+        console.log(ans1); // [Function: hello]
+        ans1(); //hello world { else print this way if u r doing console }
+
+        console.log(ans1()); //hello world  { If u use return in inside func then print this way }
+
+{ 
+    We can Even Call the Function use .call() 
+    like
+    function hello(){
+        console.log('Hello')
+    }
+    
+    hello.call();
+}
+
+
+
+{    
+    4.1_Function_Declaration.js  
+    4.2_Function_Expression.js
+    4.3_ArrowFunctions.js
+    4.4_MoreAboutFunctions_Diff_Parameters_CallBack.js
+}

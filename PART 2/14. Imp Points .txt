@@ -1,0 +1,69 @@
+
+*** JavaScript itself is a Synchronous { Line By Line Execution } Programming 
+    Language  , Single Threaded means itself it will run one Line then Another Line  
+    The Asynchronous Nature of JavaScript is being Provided by the Browser
+    Its also a Lexical Scope Language as the variable decides the scope by itsSurroundings or we have written Our Code        
+    
+    *** How JavaScript Works !!
+
+            1. Code Compile or Compilization Phase
+                a. Tokenizing / Lexing - { code Gets Breaks into smaller parts / Chunks called Tokens }
+                b. Parsing { Understand the Smaller Tokens }
+                c. Code Generation
+
+                WhHY ?
+                *** In ES6 , there should be an early checking , and see all the scopes of each Variable { so we need to Parse }
+
+
+            2. Code Execution Phase  
+
+                In Js , To execute Code , we need to create an Execution Context
+                The Very First Execution Context i.e is being created is called Global Execution Context ( GCE ) **
+                -   Build in 2 Phase { Creation Phase  &  Code Execution Phase }
+                -   Its Get added on STACK 
+
+    ***  Hoisting In Js
+
+                Hoisting is a feature in JavaScript that allows variables and function declarations to be used before they are declared in your code. 
+
+
+                Hoisting behaves differently for Function Declarations and Function Expressions in JavaScript.
+                
+                Function Declarations:
+                
+                When a Function Declaration is encountered in JavaScript code, the whole function is hoisted (i.e. moved to the top) of its scope before any code is executed. This means that we can use the function before it is actually declared.
+                
+                Here's an example:
+                
+                myFunction(); // This works!
+                function myFunction() {
+                  console.log('Hello World!');
+                }
+                In the above example, we can call myFunction before it is actually defined in the code because of hoisting.
+                
+                Note that this only works with Function Declarations, not with Function Expressions.
+                
+                Function Expressions:
+                
+                When we create a function using Function Expression, only the variable declaration is hoisted, not the function definition. This means that if we try to call the function before it is defined in the code, we will get an error.
+                
+                myFunction(); // TypeError: 
+                myFunction is not a function
+                var myFunction = function() {
+                  console.log('Hello World!');
+                };
+                In the above example, we get a TypeError because we are trying to execute the myFunction before it is defined in the code. This is because only the variable declaration (var myFunction) gets hoisted to the top, not the function definition.
+
+                { In case of let and Const , it will be Uninitialized  , Yes they are Hoisted  but uninitialized }
+    
+    ***  TDZ stands for "Temporal Dead Zone" in JavaScript"
+
+                It refers to a specific period of time during the code's execution where a variable exists but cannot be accessed yet. This occurs when trying to access a variable before it has been declared with let or const. The variable is technically in scope, but any attempt to access it will result in a ReferenceError. The TDZ lasts until the variable is declared, and then it can be accessed normally.
+
+    ***  Lexical environment in js 
+                a Lexical Environment is an internal JavaScript concept that stores and manages the variables and scope of a function during runtime. The lexical environment enables JavaScript to maintain the scope chain of a function, which determines how variables are accessed and resolved during execution. When a variable is accessed within a function, JavaScript first looks up that variable in the current lexical environment. If not found, it moves up the inner lexical environment to the outer one until it finds the variable or reaches the global object (window object in the browser).
+                
+                This feature allows JavaScript to support closures, where a function retains access to the lexical environment of its parent function even after it's been returned.
+    
+    ***  The scope is where a variable is available in your code
+

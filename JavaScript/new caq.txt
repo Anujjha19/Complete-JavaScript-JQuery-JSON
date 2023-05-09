@@ -1,0 +1,13 @@
+
+2. Implement an image gallery with the following structure
+1
+Main image area
+2
+3
+Image1 Image2 Image3
+
+3. Nest the following HTML elements inside each other.
+a. Form
+b. Span element
+c. Text box element
+Display Student name for click on Text box element, Register number for click on Span element and Course name for click on Form.

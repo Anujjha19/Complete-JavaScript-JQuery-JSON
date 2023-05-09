@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Await </title>
+</head>
+
+<body>
+    <script>
+
+        /* async function test(){
+            console.log(" 2 : Message " );
+            await console.log(" 3 : Message " );
+            console.log(" 4 : Message " );
+
+        }
+        console.log(" 1 : Message " );
+        test();
+        console.log(" 5 : Message " ); */
+
+        /* async function test() {
+            console.log(" 2 : Message ");
+            const response = await fetch("/students_data.json")
+            console.log( '3 : Message ')
+            const student = await response.json();
+            return student;
+        }
+        console.log(" 1 : Message ");
+        let a = test();
+        console.log(" 4 : Message ");
+        console.log(a); */
+
+        async function test() {
+            try {
+                const response = await fetch("/students_data.json")
+                const student = await response.json();
+
+                return student;
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+        test().then((res) => {
+            console.log(res);
+        })
+
+        /*   async function test() {
+            return (await fetch("/students_data.json")).json();
+        }
+        test().then((res) => {
+            console.log(res);
+        }).catch((error) => {
+            console.log(error);
+        }) */
+
+    </script>
+</body>
+
+</html>

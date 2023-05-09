@@ -1,0 +1,299 @@
+
+* Names of Variable cannot be start from Number , we cant uses spaces in between but can
+  use underscore { snake case Way ex : my_name } and $ 
+  --Convention Always  :  { Camelcase  ex : myName } 
+
+* Variables can Store some info , that can used and changed later , They are Case
+  Sensitive 
+  --var can be  re-declared 
+* let used to conventionally to  declare variable because it can't be  redeclared 
+* const to make variables that can't be changed in future 
+
+{ Immutable simply means unmodifiable, it means, original content of string is never changed }
+
+* String Indexing 
+  -- let firstName ="anuj"
+        firstName[i] ; 
+        firstName.length; //length = 4
+        { Spaces also count in Length  ex: "anuj " , Now length = 5 }
+        firstName[ firstName.length - 1 ]
+
+* String Methods  
+  -- let myName ="  Ritik  "
+        firstName.trim();
+
+[  In String File ]
+
+* TypeOf Operators
+    Primintive Data Types -
+      -String
+      -Number
+      -Booleans
+      -Null
+      -Undefinded
+      -BigInt
+      -Symbol
+    Non-Primtive Data Types
+      -Objects
+
+    (typeof age) //Number
+
+---Number to String
+    age = age + ""  (typeof age) //String
+    or , age = String(age);
+
+---String to Number
+    age = "34";
+    age = +"34"     (typeof age) //Number
+    or , age = Number(age);
+
+
+* String Concatenation
+    let str1 = "anuj"
+    let str2 = "jha"
+    let fullName = str1 + " " + str2;
+    console.log(fullName);
+
+    let str3 = "17"
+    let str4 = "18"
+    let noConcat = str3 + " " + str4;
+    console.log(noConcat); //1718
+
+    let noConcat1 = Number(str3 )+ Number(str4);
+    console.log(noConcat1); //35
+
+* template String   
+    let age = 21;
+    let name="Anuj Jha";
+    console.log(`My name is ${name} and my age is ${age} .`) 
+
+*  Undefinded - no value defined for it
+    let firstName;  // (typeof firstName) = undefined
+    var lastName;   // (typeof lastName) = undefined
+    const can't be undefined 
+
+*  NULL
+    let num = NULL;  // (typeof num) = NULL
+    console.log(typeof null)  //Object - its a bug , error
+
+*  BigInt
+    let myNum = 123;
+    console.log(myNum);
+    console.log(Number.MAX_SAFE_INTEGER); //No of max integer we can Store
+
+    let myNum_toBigInt = BigInt(123456789121215455);
+    or,
+    let myNum_toBigInt = 123n
+    console.log(myNum_toBigInt);
+
+    { It can not mixed with Other Data Types }
+
+*  Boolean & Comparision Operators
+
+    let num1=3;
+    let num2=4;
+    console.log( num1 > num2) //False
+
+*  == VS ===
+    let num3="4";
+    let num4=4;
+    console.log( num3 == num4) //True -- WIll Not Check For Data Types
+    console.log( num3 === num4) //False -- Will check for both value and Data Types
+
+*  != VS !==
+    let num3="4";
+    let num4=4;
+    console.log( num3 != num4) //False -- WIll Not Check For Data Types
+    console.log( num3 !== num4) //True -- Will check for both value and Data Types
+
+*  If Else
+    let age = 17;
+    if( age < 18){
+        console.log(" He Can't Vote ")
+    }else{
+        console.log(" He Can Vote ")
+    } // He Can't Vote
+
+
+*  Truthy & Falsy Values
+    //  If the variable has val apart from 0 , NULL , undefined then all are Truthy Values
+    //  Falsy Values  -- { false , "" , NULL , undefined , 0 }
+
+        age =""
+        if( age){
+            console.log(" He Can't Vote ")
+        }else{
+            console.log(" He Can Vote ")
+        } 
+        //He Can Vote
+
+        age ;
+        if( age){
+            console.log(" He Can't Vote ")
+        }else{
+            console.log(" He Can Vote ")
+        } 
+        //He Can Vote
+
+        age =NULL;
+        if( age){
+            console.log(" He Can't Vote ")
+        }else{
+            console.log(" He Can Vote ")
+        } 
+        //He Can Vote
+
+        age = 0;
+        if( age){
+            console.log(" He Can't Vote ")
+        }else{
+            console.log(" He Can Vote ")
+        } 
+        //He Can Vote
+        age = false;
+        if( age){
+            console.log(" He Can't Vote ")
+        }else{
+            console.log(" He Can Vote ")
+        } 
+        //He Can Vote
+
+
+*  Trernary Operators / Conditional Operators
+    
+        let roll =5 ;
+        /* let names;
+        if( roll >= 5){
+            names="Above 5 Roll No "
+        }else{
+            names="Below 5 Roll No "
+        }
+        */
+
+        let names = roll >= 5 ? "Above 5 Roll No " :"Below 5 Roll No "
+        console.log(names);
+
+
+*  AND 0r OR Operator
+
+        let name = "anuj";
+        let age = 21 ;
+
+    // Check For Both Condition To be TRUE
+        if( name[0]==="A" && age === 21 ){
+            console.log( "True" );
+        }else{
+            console.log( "False" );
+        }
+
+
+    // Check For ANY ONE Condition To be TRUE
+        if( name[0]==="A" || age === 21 ){
+            console.log( "True" );
+        }else{
+            console.log( "False" );
+        }
+
+*  Neted If-Else
+
+        let userGuess = '6';
+        let winningNo = 20;
+        //let userGuess1 = prompt("Guess a No : ") //Prompt will give take value  in string
+        userGuess = Number(userGuess)
+        if (userGuess === winningNo) {
+                console.log("Correct userGuess")
+        }
+        else {
+                 if (userGuess < winningNo) {
+                console.log("Wrong userGuess too LOW ! ")
+                } else {
+                console.log("Wrong userGuess too HIGH ! ")
+
+            }
+        }
+
+
+*  Switch Case 
+
+        let day = 7;
+        switch (day) {
+
+            case 1:
+                console.log("SunDay");
+                break;
+
+            case 2:
+                console.log("MonDay");
+                break;
+
+            case 3:
+                console.log("TuesDay");
+                break;
+
+            case 4:
+                console.log("WednesDay");
+                break;
+
+            case 5:
+                console.log("ThursDay");
+                break;
+
+            case 6:
+                console.log("FriDay");
+                break;
+
+            case 7:
+                console.log("SaturDay");
+                break;
+            default:
+                console.log("Only 7 days in a Week ")
+        }
+
+*  While Loop
+    
+        let num = 0;
+        let sum = 0;
+
+        while (num <= 10) {
+        console.log(num);
+        sum += num;
+        num++;
+        }
+        console.log(sum);
+
+
+*  FOR Loop      
+    
+        let sum = 0;
+        for(let i=0; i< 10 ; i++){
+            console.log(i);
+            sum += i;
+        }
+        console.log(sum);
+
+*  Break KeyWord
+        for(let i=0; i< 10 ; i++){
+        if( i==4) break;
+        console.log(i);
+        }
+    It will Break or exit the loop where conition Met
+
+*  Continue KeyWord
+        for(let i=0; i< 10 ; i++){
+        if( i==4) continue;
+        console.log(i);
+        }
+    It will skip the iteration where conition Met
+
+*  Do While Loop
+
+    -WIll Executes for One Time Definitely 
+    let i = 10;
+    do {
+    console.log(i);
+    i++;
+    } while (i <= 9);
+
+
+{  1_String_Switch_Break_continue_If_Else_Loop.js
+ }

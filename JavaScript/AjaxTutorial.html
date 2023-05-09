@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Ajax Tutorials </title>
+</head>
+
+<body>
+    <p id="demo"> Here we load Data . </p>
+    <button onclick=" getData() "> getData using Ajax</button>
+
+    <script>
+        function getData() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    console.log(this.responseText);
+
+                    document.getElementById("demo").innerHTML = (this.responseText);
+                }
+                else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById("demo").innerHTML = ("File Not Found ");
+                }
+            }
+
+          /*   xhttp.open('GET', "/Checking Ajax.txt", true);
+            xhttp.send(); */
+          xhttp.open('GET', "https://jsonplaceholder.typicode.com/posts", true);
+            xhttp.send(); 
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+
+        *** 
+        IIFE stands for Immediately Invoked Function Expression. It is a JavaScript function that runs as soon as it is defined. This kind of functions are typically used to create a private scope in JavaScript, which helps prevent naming collisions or polluting the global namespace.
+
+        To define an IIFE, you simply wrap a function expression in parentheses and immediately invoke it using the () operator, like this:
+
+        CODE:-
+                (function(){
+                // your code here
+                })();
+
+        The above example defines an anonymous function and immediately invokes it. Any variables or functions declared inside the IIFE are not accessible from the outside, which makes it a great way to encapsulate functionality and avoid naming conflicts.
+
+
+
+*   You must add Js File At just End of BODY tag
+*   If we Put Js at head it will stop loading below content at ONCE  ,
+    So , to solve this we use Async and Defer 
+
+    
+*** ASYNC vs DEFER
+
+        Aync - The async attribute specifies that the script should be executed asynchronously with the rest of the web page, which means the script can be downloaded independently of the page and executed as soon as possible without waiting for the page to finish loading.
+
+        Defer - The defer attribute specifies that the script should be executed after the web page has finished parsing, but before firing the DOMContentLoaded event. This means that even though the script may still be downloaded asynchronously, it won't execute until the entire page has been parsed. Also, the defer attribute guarantees that scripts will be executed in the order they appear within the document.
+
+        1.  Scripts with the async attribute are executed immediately after they are downloaded from server whereas scripts with the defer attribute are executed as soon as the document has finished parsing.
+
+        2.  Multiple scripts having async attribute may be executed in any order whereas scripts having defer attribute are always executed in the order they appear in the document.
+
+        {   If the script file has dependencies on other files or depends on certain DOM content, then using defer might be a better option so that scripts are executed in the order they appear in the document.  }
+
+
+***     Document Object Model ( DOM )
+
+    *   TextContent will give you all the Content of Tag even it's  
+        not showing on the browser , even it is Hidden by Developer
+
+    *   innerText will give you only the text of your Tag that 
+        is ishowing on the browser , if it is Hidden by Developer , it will not show
+
+    *** CLASSNAME is giving a HTML Collection
+    *** QuerySelectoAll is giving a NODELIST
+
+        {   
+            NodeList can contain any type of node while HTMLCollection is specific to elements with a particular tag name.  
+
+            NodeList is a collection of all types of DOM nodes, whereas HTMLCollection is a collection of elements of a specific tag name
+
+        }
+
+    *** in DOM , CHILDREN will not Include text and Empty spaces 
+
+    *** in DOM , CHILDREN will  Include  all text and Empty spaces 
+
+    {   
+        The main difference between parent.children and parent.
+        childNodes is that the children property only retrieves Element nodes, while childNodes retrieves all nodes including text nodes, comment nodes, etc.
+    }
+
+
+
