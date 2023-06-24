@@ -220,5 +220,21 @@
         // The Event object keeps tracks of various events that occur on the page, such as the user moving the mouse or clicking on the link, and allows you (the webmaster) to react to them.
 
 
-        
-/* Event Bubbling and Event Capturing  */
+/* KeyPress and MouseOver Event */
+
+const body = document.body;
+body.addEventListener("keypress", (e) => {
+        console.log(e);
+        console.log(e.key);
+})
+
+const mainButton = document.querySelector(".btn-heading");
+mainButton.addEventListener("mouseover", (e) => {
+        console.log("mouseOver Evnet ");
+});
+mainButton.addEventListener("mouseleave", (e) => {
+        console.log("mouseLeave Evnet ");
+});
+
+
+
