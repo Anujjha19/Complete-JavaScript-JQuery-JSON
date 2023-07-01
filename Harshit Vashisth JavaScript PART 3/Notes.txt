@@ -1,0 +1,76 @@
+JavaScript : JS is Synchronous ( line-by-line ) and a single-threaded ( 
+             one task at a time ) programming language. But with the help of async-await, set-timeout–set-interval, and promise ( .then .then … ) we can change the default behavior of javascript and make it asynchronous.
+
+Synchronous Programming : Here tasks are executed one after the other in 
+                          a sequential manner. Each task must complete before the next one can start.
+
+            Ex: console.log('Hi')
+                for(let i=0 ; i<2 ; i++){
+                    console.log("Bye");
+                }
+                console.log("End");
+
+                Output : Hi Bye Bye End
+
+Asynchronous Programming : Here tasks can be started and completed 
+                           independently of each other. Instead of waiting for a task to finish before moving on to the next one, the program can continue executing other tasks while waiting for the completion of certain operations
+            Ex: console.log("Start");
+                setTimeout(() => {
+                console.log("Inside setTimeout");
+                }, 2000);
+                console.log("End");
+
+                Output :Start End Inside setTimeout
+
+Set-Timeout
+
+    *   setTimeout is a browser functionality
+    *   The Call-back in setTimeout will run only after all the execution of 
+        other sync code has been done.
+    *   The setTimeout function in JavaScript returns an ID that can be used 
+        to cancel the timeout before it executes.
+
+                const timeoutId = setTimeout(() => {
+                console.log('Timeout executed!');
+                }, 2000);
+                It returns an ID, which is stored in the timeoutId variable.
+
+            If you want to cancel the timeout before it executes, you can use the clearTimeout function and pass in the ID returned by setTimeout and then the setTimeout function will not execute. 
+            
+                clearTimeout(timeoutId);
+
+            It's important to note that the ID returned by setTimeout is UNIQUE for each timeout, so if you have multiple timeouts, you need to store their respective IDs if you want to cancel them individually.
+     
+*   Event-Loop allows JavaScript to handle asynchronous tasks by 
+    offloading them to the browser or runtime environment and then executing them when the call stack is empty.
+
+Set-interval
+
+    *   The setInterval function in JavaScript is 
+        similar to setTimeout, but instead of executing a function once after a specified delay, it repeatedly executes a function at a given interval.
+
+            const intervalId = setInterval(() => {
+            console.log('Interval executed!');
+            }, 1000);
+
+        To stop the interval execution, you can use the clearInterval function and pass in the ID returned by setInterval. 
+
+            clearInterval(intervalId);
+                
+        By calling clearInterval with the intervalId, the interval execution will be stopped, and the function inside setInterval will no longer be executed.
+
+CallBack
+
+        Callback is a function that is passed as an argument to another function and is executed at a later point in time. Callbacks are commonly used in asynchronous programming to handle the result of an asynchronous operation.
+
+        Ex: function get2No_and_add (a, b, callback) 
+            {
+            console.log(a, b);
+            callback(a,b);
+            }
+            function add2no(a, b) {
+                console.log(a + b);
+            }
+            get2No_and_add (4, 5, add2no);
+
+            
