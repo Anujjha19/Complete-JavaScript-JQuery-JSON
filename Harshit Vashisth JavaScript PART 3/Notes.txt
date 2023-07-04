@@ -73,4 +73,61 @@ CallBack
             }
             get2No_and_add (4, 5, add2no);
 
-            
+Callback Hell : It is a term used to describe the situation when code 
+                becomes difficult to read and maintain due to excessive nesting of callbacks. This often occurs in asynchronous JavaScript programming, where multiple asynchronous operations are chained together using callbacks.
+
+                    getArticles(20, (user) => {
+                    console.log("Fetch articles", user);
+                    getUserData(user.username, (name) => {
+                        console.log(name);
+                        getAddress(name, (item) => {
+                        console.log(item);
+                        // this goes on and on...
+                        }
+                    })
+
+Pyramid of Doom: It is a term used to describe a situation in code 
+                 where multiple nested callbacks or asynchronous operations create deeply indented and hard-to-read code. It often occurs when dealing with asynchronous tasks, such as making API calls or handling events.
+
+                    console.log("Pyramid of dooooooooom!");
+
+                    step1(function (value1) {
+                        step2(function (value2) {
+                            step3(function (value3) {
+                                step4(function (value4) {
+                                    step5(function (value5) {
+                                        step6(function (value6) {
+                                            step7(function (value7) {
+                                                //Do something with valuE 4
+                                                console.log(value7);
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+
+Promises : Promises in JavaScript are objects that represent the 
+           eventual completion (or failure) of an asynchronous operation. They provide a way to handle asynchronous code in a more structured and readable manner.
+
+            A promise has three states:
+                *   Pending: The initial state when the promise is 
+                    created, and the asynchronous operation is still in progress.
+                *   Fulfilled: The state when the asynchronous operation 
+                    is successfully completed, and the promise is resolved with a value.
+                *   Rejected: The state when the asynchronous operation 
+                    encounters an error or fails, and the promise is rejected with a reason or an error object.
+
+AJAX : AJAX (Asynchronous JavaScript and XML) is a technique used to 
+       send and receive data from a server without reloading the entire web page. It allows you to update parts of a web page dynamically.
+
+        We have 3 most common ways to create and send request to server
+            1. xmlHTTPRequest (old way of doing)
+            2. fetch API (new way of doing)
+            3. axios (this is third party library)
+
+        HTTP request is a set of "web development techniques"  using many web technologies on the "client-side " to create asynchronous web applications. 
+
+        We don't use data in XML format anymore , We use JSON now.
+
