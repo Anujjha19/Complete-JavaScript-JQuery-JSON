@@ -131,3 +131,31 @@ AJAX : AJAX (Asynchronous JavaScript and XML) is a technique used to
 
         We don't use data in XML format anymore , We use JSON now.
 
+Fetch API : Fetch API in JavaScript, you can make HTTP requests to fetch data from a 
+            server. It returs a promise. Fetch returns a promise and will only reject when we have network related error.
+
+                    fetch('https://api.example.com/data')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+
+Async-Await :  Async/await is a feature in JavaScript that allows you to write 
+               asynchronous code in a more synchronous and readable manner. It is built on top of Promises and provides a way to handle asynchronous operations using a syntax. It return a Promise
+
+               An async function always returns a Promise, which can be resolved with the value returned by the function or rejected with an error thrown inside the function.
+
+                    async function fetchData() {
+                    try {
+                        const response = await fetch('https://api.example.com/data');
+                        const data = await response.json();
+                        console.log(data);
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                    }
+
+                    fetchData();
